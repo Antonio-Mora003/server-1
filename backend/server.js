@@ -30,7 +30,8 @@ app.use(express.static(path.join(__dirname, "frontend")));
 
 // Servir el archivo index.html en la raíz
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "frontend", "index.html"));
+    res.sendFile(path.resolve(__dirname, "frontend", "index.html"));
 });
+
 
 app.listen(PORT, () => console.log(`Servidor corriendo en el puerto ${PORT}`));
