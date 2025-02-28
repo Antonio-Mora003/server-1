@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="panel.css">
+</head>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const token = localStorage.getItem("token");
+
+        if (!token) {
+            // Si no hay token, redirigir al login
+            window.location.href = "index.html";
+        }
+    });
+</script>
+
+
+<body>
+    <div class="panel-container">
+        <!-- Menú lateral -->
+        <nav class="panel-menu">
+            <div class="menu-header">
+                <h2>Admin Panel</h2>
+                <button class="menu-toggle">
+                    &#9776; <!-- Ícono de menú hamburguesa -->
+                </button>
+            </div>
+            <ul class="menu-items">
+                <li><a href="#"><i class="fas fa-users"></i> Usuarios</a></li>
+                <li><a href="#"><i class="fas fa-cogs"></i> Configuración</a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i> Reportes</a></li>
+            </ul>
+        </nav>
+        
+
+        <!-- Contenido principal -->
+        <div class="panel-content">
+            <header class="panel-header">
+                <h1 id="welcomeMessage">Bienvenido, <span id="username"></span></h1>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const username = localStorage.getItem("username");
+                
+                        if (username) {
+                            document.getElementById("username").textContent = username;
+                        }
+                    });
+                </script>
+                
+
+                <button id="logoutButton" class="btn-logout">Cerrar Sesión</button>
+
+            </header>
+            <main class="main-content">
+                <!-- Gestión de Usuarios -->
+
+
+                <div class="pw-main-9x4q">
+                    <div class="pw-top-3fm8">
+                        <h2 class="pw-title-jk5r"> Mi Vault Digital</h2>
+                        <div class="pw-secstat-7tq2">
+                            <span class="pw-ico-shield-z4w9"></span>
+                            <span class="pw-statustxt-p8m3">Protegido</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pw-content-2v6s">
+                        <div class="pw-databox-4n7y">
+                            <div class="pw-infobox-r9l2">
+                                <span class="pw-datalabel-1s5f">Contraseñas guardadas</span>
+                                <span class="pw-datanum-x8k4" id="pw-counter-g3h7">12</span>
+                            </div>
+                            <div class="pw-infobox-r9l2">
+                                <span class="pw-datalabel-1s5f">Última actualización</span>
+                                <span class="pw-datanum-x8k4" id="pw-lastup-f6d2">05/07/2023</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pw-btngroup-5tq9">
+                            <a href="registro.html" class="pw-btnlink-8w4e">
+                                <button class="pw-mainbtn-3c7q pw-color1-kj9n">
+                                    <span class="pw-btnico-2m4v">
+                                        <img src="minicon/mas.png" alt="Editar" width="16" height="16">
+                                    </span>
+                                    
+                                    Nueva Credencial
+                                </button>
+                            </a>
+                            
+                            <a href="galeria.html" class="pw-btnlink-8w4e">
+                                <button class="pw-mainbtn-3c7q pw-color2-m1x8">
+                                    <span class="pw-btnico-2m4v">
+                                        <img src="minicon/carpeta.png" alt="Editar" width="16" height="16">
+                                    </span>
+                                    
+                                    Ver Todas
+                                </button>
+                            </a>
+                        </div>
+                        
+                        <div class="pw-alert-7b3t">
+                            <span class="pw-infoico-9v4q">ℹ️</span>
+                            Todas las contraseñas están encriptadas con AES-256
+                        </div>
+                    </div>
+                </div>
+                
+
+
+
+
+
+                <div class="card">
+                    <h3>Gestión de Usuarios</h3>
+                    <div class="search-container">
+                        <input type="text" id="searchBar" placeholder="Buscar usuario por nombre..." />
+                    </div>
+                    <table id="dataGrid" class="recordsPanel">
+                        <thead>
+                            <tr class="headerRow">
+                                <th class="colUserAlias">User Handle</th>
+                                <th class="colAccessLevel">Privilege</th>
+                                <th class="colControls">Options</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="dataRow">
+                                <td class="userTag" data-identifier="User Handle">Juan Pérez</td>
+                                <td class="permLevel" data-identifier="Privilege">Administrador</td>
+                                <td class="actionPanel" data-identifier="Options">
+                                    <button class="modifyEntry">Editar</button>
+                                    <button class="removeEntry">Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                </div>
+
+                <!-- Reportes -->
+                <div class="card">
+                    <h3>Reportes</h3>
+                    <p>Visualiza los reportes disponibles en el sistema.</p>
+                    <p><strong>Total de usuarios:</strong> <span id="totalUsers">0</span></p>
+                    <p><strong>Último usuario registrado:</strong> <span id="lastUser">N/A</span></p>
+                </div>
+                
+                <div class="card">
+                    <h3>Configuración Avanzada</h3>
+                    <p>Espacio reservado para futuras configuraciones avanzadas del sistema.</p>
+                </div>
+                
+            </main>
+        </div>
+    </div>
+    <script >
+
+
+const menuToggle = document.querySelector(".menu-toggle");
+const menuItems = document.querySelector(".menu-items");
+
+menuToggle.addEventListener("click", function () {
+    menuItems.classList.toggle("active");
+    menuToggle.classList.toggle("active"); // Para animar el icono
+});
+
+document.getElementById("logoutButton").addEventListener("click", function () {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    window.location.href = "index.html";
+});
+
+
+    </script>
+</body>
+</html>

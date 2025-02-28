@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Contraseñas</title>
+    <link rel="stylesheet" href="galeria.css">
+</head>
+
+
+<body>
+    <div class="vault-container">
+        <!-- Encabezado -->
+        <header class="vault-header">
+            <h1> Mis Credenciales</h1>
+            <a href="registro.html" class="new-entry-btn">
+                Nueva entrada
+            </a>
+        </header>
+
+        <!-- Grid de contraseñas -->
+        <div class="credentials-grid">
+            <!-- Tarjeta individual -->
+            <article class="credential-card">
+                <div class="card-header">
+                    <img src="icone/facebook.svg" alt="Facebook" class="service-icon">
+                    <h3 class="service-name">Facebook</h3>
+                </div>
+
+                <div class="card-body">
+                    <div class="credential-field">
+                        <span class="field-label">Usuario:</span>
+                        <span class="field-value username">juanperez123</span>
+                    </div>
+
+                    <div class="credential-field password-field">
+                        <span class="field-label">Contraseña:</span>
+                        <span class="field-value password" data-password="realpassword123">••••••••</span>
+                        <button class="toggle-password">
+                        <img src="minicon/ojo.png" alt="Mostrar contraseña" width="16" height="16">
+                     </button>
+
+                    </div>
+
+                    <div class="metadata">
+                        <div class="date-info">
+                          <span class="created-date">
+                            <img src="minicon/calendario.png" alt="Calendario" width="16" height="16">
+                            Creada: 2023-07-15
+                        </span>
+                        
+                            
+                        </div>
+
+                        <div class="notes-section">
+                            <span class="notes-label">Notas:</span>
+                            <p class="notes-content">Cuenta personal con 2FA activado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-actions">
+                    <button class="action-btn edit-btn" title="Editar" onclick="window.location.href='registro.html'">
+    <img src="minicon/editar.png" alt="Editar" width="16" height="16">
+</button>
+
+                    
+                    <button class="action-btn delete-btn" title="Eliminar">
+                        🗑️
+                    </button>
+                </div>
+            </article>
+
+            <!-- Ejemplo de entrada sin notas -->
+            <article class="credential-card">
+                <div class="card-header">
+                    <img src="icone/twitter.svg" alt="Twitter" class="service-icon">
+                    <h3 class="service-name">X -Twitter</h3>
+                </div>
+
+                <div class="card-body">
+                    <div class="credential-field">
+                        <span class="field-label">Usuario:</span>
+                        <span class="field-value username">ana_maria22</span>
+                    </div>
+
+                    <div class="credential-field password-field">
+                        <span class="field-label">Contraseña:</span>
+                        <span class="field-value password" data-password="tw33t3rP@ss">••••••••</span>
+                        <button class="toggle-password">
+    <img src="minicon/ojo.png" alt="Mostrar contraseña" width="16" height="16">
+</button>
+
+                    </div>
+
+                    <div class="metadata">
+                        <div class="date-info">
+                          <span class="created-date">
+                            <img src="minicon/calendario.png" alt="Calendario" width="16" height="16">
+                            Creada: 2023-07-15
+                        </span>
+                            
+                        </div>
+
+                        <div class="notes-section">
+                            <span class="notes-label">Notas:</span>
+                            <p class="notes-content">N/A</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-actions">
+                    <button class="action-btn edit-btn" title="Editar" onclick="window.location.href='registro.html'">
+    <img src="minicon/editar.png" alt="Editar" width="16" height="16">
+</button>
+
+                    
+                    <button class="action-btn delete-btn" title="Eliminar">
+                        🗑️
+                    </button>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <script>
+
+let lastScrollY = window.scrollY;
+const header = document.querySelector(".vault-header");
+
+window.addEventListener("scroll", () => {
+    let scrollY = window.scrollY;
+
+    if (scrollY > lastScrollY) {
+        // Si el usuario baja, oculta el header
+        header.style.transform = "translateY(-100%)";
+    } else {
+        // Si el usuario sube, vuelve a su posición original
+        header.style.transform = "translateY(0)";
+    }
+
+    lastScrollY = scrollY;
+});
+
+</script>
+</body>
+</html>

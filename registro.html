@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Account Manager Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="registro.css">
+    
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <div class="brand">
+                <img src="pak.png" alt="Logo" style="width: 3.4em; height: 3em;">
+                <span>SEGUREDES</span>
+            </div>
+            
+            <div class="actions">
+
+                <input type="file" id="import" hidden>
+                <label for="import" class="icon-btn">
+                    <i class="fas fa-file-import"></i>
+                </label>
+                <button class="icon-btn" id="export">
+                    <i class="fas fa-file-export"></i>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <form id="accountForm" class="form-card">
+                <!-- Añade estos nuevos campos al formulario (ANTES del botón de submit) -->
+<div class="form-group">
+    <label for="email">Correo asociado</label>
+    <input type="email" id="email" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="creationDate">Fecha de creación</label>
+    <input type="date" id="creationDate" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="expirationDate">Fecha de caducidad</label>
+    <input type="date" id="expirationDate" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="url">URL del perfil</label>
+    <input type="url" id="url" class="form-control">
+</div>
+
+<div class="form-group full-width">
+    <label for="notes">Notas</label>
+    <textarea id="notes" class="form-control" rows="3"></textarea>
+</div>
+                
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i>
+                    Guardar Cuenta
+                </button>
+            </form>
+
+            <div class="accounts-grid" id="accounts"></div>
+        </main>
+    </div>
+
+    
+</body>
+</html>

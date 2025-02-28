@@ -1,0 +1,450 @@
+/* 🔄 Reset global */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: block; /* Asegura que el scroll funcione */
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #001f3f, #003366, #004d40, #002b36);
+    background-size: 300% 300%;
+    animation: aurora 15s ease infinite;
+    color: #fff;
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+/* Animación del fondo */
+@keyframes aurora {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* 🏢 Contenedor Principal */
+.panel-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* 📌 Menú lateral */
+.panel-menu {
+    background: #1e252b;
+    width: 250px;
+    min-height: 100vh;
+    padding: 25px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease-in-out;
+}
+
+.panel-menu h2 {
+    font-size: 22px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.panel-menu ul {
+    list-style: none;
+}
+
+.panel-menu ul li {
+    margin-bottom: 18px;
+}
+
+.panel-menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.panel-menu ul li a:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.panel-menu ul li a i {
+    margin-right: 12px;
+    font-size: 16px;
+}
+
+/* 📌 Contenido principal */
+.panel-content {
+    flex: 1;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 🔹 Header */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 16px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.panel-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2a2a2a;
+}
+
+/* 🔘 Botón Cerrar Sesión */
+.btn-logout {
+    background: #e0e0e0;
+    color: #2a2a2a;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-logout:hover {
+    background: #d6d6d6;
+}
+
+/* 📂 Tarjetas (Cards) */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+    margin-bottom: 25px;
+}
+
+.card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+/* 🔍 Barra de búsqueda */
+.search-container {
+    margin-bottom: 14px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    outline: none;
+}
+
+/* 📊 Tabla de usuarios */
+.recordsPanel {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recordsPanel th,
+.recordsPanel td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.recordsPanel th {
+    background: #eceff1;
+    color: #333;
+    font-weight: 600;
+}
+
+.recordsPanel tr:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+/* 🎛️ Botones de opciones */
+.modifyEntry,
+.removeEntry {
+    margin-top: 10px; /* Ajusta el valor según lo necesites */
+    padding: 8px 14px;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.modifyEntry {
+    background: #d6d6d6;
+    color: #333;
+}
+
+.modifyEntry:hover {
+    background: #c2c2c2;
+}
+
+.removeEntry {
+    background: #e57373;
+    color: white;
+}
+
+.removeEntry:hover {
+    background: #d32f2f;
+}
+
+/* 📌 Gestión de contraseñas */
+.pw-main-9x4q {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+    margin-bottom: 25px;
+}
+
+.pw-top-3fm8 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pw-title-jk5r {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+}
+
+.pw-secstat-7tq2 {
+    display: flex;
+    align-items: center;
+}
+
+.pw-ico-shield-z4w9 {
+    font-size: 18px;
+    margin-right: 6px;
+}
+
+.pw-content-2v6s {
+    margin-top: 12px;
+}
+
+.pw-databox-4n7y {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.pw-infobox-r9l2 {
+    text-align: center;
+}
+
+.pw-datalabel-1s5f {
+    font-size: 14px;
+    color: #777;
+}
+
+.pw-datanum-x8k4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.pw-btngroup-5tq9 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.pw-mainbtn-3c7q {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.pw-color1-kj9n {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.pw-color1-kj9n:hover {
+    background: #c2c2c2;
+}
+
+.pw-color2-m1x8 {
+    background: #90a4ae;
+    color: white;
+}
+
+.pw-color2-m1x8:hover {
+    background: #607d8b;
+}
+
+.pw-alert-7b3t {
+    background: #050505;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* 📱 Responsividad */
+@media (max-width: 768px) {
+    .panel-container {
+        flex-direction: column;
+    }
+
+    .panel-menu {
+        width: 100%;
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .panel-content {
+        padding: 25px;
+    }
+}
+
+
+.pw-alert-7b3t {
+    margin-top: 12px; /* Ajusta el valor según lo necesites */
+}
+
+
+
+
+
+/* 📌 Gestión de menu en mobiles  */
+.panel-menu {
+    background: #333;
+    color: white;
+    padding: 10px;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Ocultar en PC */
+}
+
+/* Ocultar menú en móviles por defecto */
+.menu-items {
+    list-style: none;
+    padding: 0;
+    display: block; /* Visible en PC */
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostrar botón en móviles */
+    }
+    
+    .menu-items {
+        display: none; /* Ocultar menú en móviles */
+    }
+
+    .menu-items.active {
+        display: block; /* Mostrar menú cuando se active */
+    }
+}
+
+@media (max-width: 768px) {
+    .panel-menu {
+        background: #222;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 26px;
+        cursor: pointer;
+        padding: 10px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Animación de rotación del icono al abrir/cerrar */
+    .menu-toggle.active {
+        transform: rotate(90deg);
+    }
+
+    /* Animación del menú desplegable */
+    .menu-items {
+        list-style: none;
+        padding: 0;
+        margin-top: 10px;
+        display: none;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    .menu-items.active {
+        display: block;
+        padding: 10px;
+    }
+
+    .menu-items li {
+        padding: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .menu-items li:last-child {
+        border-bottom: none;
+    }
+
+    .menu-items a {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 18px;
+    }
+
+    .menu-items a i {
+        font-size: 20px;
+    }
+}
